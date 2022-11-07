@@ -9,6 +9,8 @@ LOCAL_TOKEN_FILE = '.token.toml'
 class Config:
     app_id: str
     app_secret: str
+    account_id: str
+    store1_id: str
 
 
 def config_from_env(app_name='trade') -> Config:
@@ -25,4 +27,4 @@ def config_from_env(app_name='trade') -> Config:
             raise Exception(f"couldn't find {app_name} in {LOCAL_TOKEN_FILE}")
 
         config = config_file[app_name]
-        return Config(config['app_id'], config['app_secret'])
+        return Config(**config)

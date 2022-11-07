@@ -97,7 +97,6 @@ class OpenAPIWeb:
 if __name__ == '__main__':
     conf = config.config_from_env('goodlife')
     api = OpenAPIWeb(conf.app_id, conf.app_secret)
-    # print(api.list_goods(7158417672403699749))
-    # print(api.query_poi_match_relations('kaTest1104'))
-    print(api.ma_list_goods())
-    
+    print(api.list_goods(conf.account_id))
+    print(api.query_poi_match_relations(conf.store1_id))
+    #print(api.ma_list_goods())
